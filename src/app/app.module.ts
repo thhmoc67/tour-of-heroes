@@ -4,19 +4,27 @@ import { FormsModule } from '@angular/forms'; //<- ngmodel lives here
 
 import { AppComponent }  from './app.component';
 import { HeroDetailComponent } from './hero-detail.component';
+import { HeroesComponent } from "./heroes.component";
+import { HeroService } from "./hero.service";
+import { DashboardComponent } from "./dashboard.component";
+import { AppRoutingModule } from "./app-routing.module";
+
+
 
 @NgModule({
   imports:      [ 
-                  BrowserModule,
-                  FormsModule,
-                 
+                 BrowserModule,
+                 FormsModule,
+                 AppRoutingModule,
                 ],
   declarations: [ 
-                  AppComponent ,
-                   HeroDetailComponent
+                 AppComponent ,
+                 DashboardComponent,
+                 HeroDetailComponent,
+                 HeroesComponent,
+                  
                 ],
-  bootstrap:    [ 
-                  AppComponent   
-                ]
-})
+  bootstrap:    [ AppComponent ],
+  providers:    [ HeroService ]
+})  
 export class AppModule { }
